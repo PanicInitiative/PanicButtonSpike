@@ -1,6 +1,7 @@
 package com.amnesty.panicbutton.spike;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -15,7 +16,7 @@ public class HomeActivity extends Activity {
     }
 
     public void showTwitterSpike(View view) {
-        displayToast("TwitterSpike Will be implemented!");
+        startActivity(new Intent(this, TwitterSpikeActivity.class));
     }
 
     public void showLocationSpike(View view) {

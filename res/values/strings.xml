@@ -6,4 +6,6 @@
     <string name="location_spike">Location Spike</string>
     <string name="ussd_spike">USSD Spike</string>
     <string name="hardware_trigger_spike">Hardware Trigger Spike</string>
+    <string name="enter_tweet">Enter your tweet</string>
+    <string name="tweet">Tweet</string>
 </resources>

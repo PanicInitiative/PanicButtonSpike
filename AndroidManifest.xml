@@ -3,7 +3,9 @@
           package="com.amnesty.panicbutton.spike"
           android:versionCode="1"
           android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="10"/>
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="10"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
     <application android:label="@string/app_name">
         <activity android:name="HomeActivity"
                   android:label="@string/app_name">
@@ -12,5 +14,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name="TwitterSpikeActivity"
+                  android:label="@string/twitter_spike"/>
+
+        <service android:name="com.amnesty.panicbutton.spike.USSDSuppressService"
+                 android:enabled="true"
+                 android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.ussd.IExtendedNetworkService"/>
+            </intent-filter>
+        </service>
     </application>
 </manifest> 
