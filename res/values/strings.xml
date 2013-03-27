@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PanicButtonSpike</string>
+    <string name="spike_header">Panic Button Spike Home</string>
+    <string name="twitter_spike">Twitter Integration Spike</string>
+    <string name="location_spike">Location Spike</string>
+    <string name="ussd_spike">USSD Spike</string>
+    <string name="hardware_trigger_spike">Hardware Trigger Spike</string>
 </resources>

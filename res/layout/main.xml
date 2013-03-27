@@ -7,7 +7,35 @@
     <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World, HomeActivity"
+            android:text="@string/spike_header"
             />
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="1dp"
+            android:text="@string/twitter_spike"
+            android:onClick="showTwitterSpike"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="1dp"
+            android:text="@string/location_spike"
+            android:onClick="showLocationSpike"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="1dp"
+            android:text="@string/ussd_spike"
+            android:onClick="showUSSDSpike"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="1dp"
+            android:text="@string/hardware_trigger_spike"
+            android:onClick="showHardwareTriggerSpike"/>
 </LinearLayout>
 
