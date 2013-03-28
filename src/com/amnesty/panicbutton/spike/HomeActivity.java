@@ -1,11 +1,8 @@
 package com.amnesty.panicbutton.spike;
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -28,7 +25,7 @@ public class HomeActivity extends Activity {
     }
 
     public void showLocationSpike(View view) {
-        displayToast("LocationSpike Will be implemented!");
+        startActivity(new Intent(this, LocationSpikeActivity.class));
     }
 
     public void showUSSDSpike(View view) {

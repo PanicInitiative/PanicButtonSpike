@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application android:label="@string/app_name">
         <activity android:name="HomeActivity"
@@ -18,6 +20,9 @@
         </activity>
         <activity android:name="TwitterSpikeActivity"
                   android:label="@string/twitter_spike"/>
+
+        <activity android:name="LocationSpikeActivity"
+                  android:label="@string/location_spike"/>
 
         <service android:name="com.amnesty.panicbutton.spike.USSDSuppressService"
                  android:enabled="true"
