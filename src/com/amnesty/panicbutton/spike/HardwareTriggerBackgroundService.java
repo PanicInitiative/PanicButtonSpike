@@ -2,11 +2,11 @@ package com.amnesty.panicbutton.spike;
 
 import android.app.Service;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.media.AudioManager;
 import android.os.IBinder;
+import android.os.Vibrator;
 import android.util.Log;
 
 public class HardwareTriggerBackgroundService extends Service {
@@ -17,16 +17,14 @@ public class HardwareTriggerBackgroundService extends Service {
         super.onCreate();
         Log.v(TAG, "CREATING HardwareTriggerBackgroundService...");
 
-        IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
-        filter.addAction(Intent.ACTION_MEDIA_BUTTON);
         filter.addAction("android.media.VOLUME_CHANGED_ACTION");
 
-        BroadcastReceiver mReceiver = new HardwareTriggerReceiver();
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        BroadcastReceiver mReceiver = new HardwareTriggerReceiver(vibrator);
         registerReceiver(mReceiver, filter);
-
-        AudioManager manager = (AudioManager) getSystemService(AUDIO_SERVICE);
-        manager.registerMediaButtonEventReceiver(new ComponentName(this, HardwareTriggerReceiver.class));
     }
 
     public IBinder onBind(Intent intent) {
