@@ -1,7 +1,11 @@
 package com.amnesty.panicbutton.spike;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -13,6 +17,10 @@ public class HomeActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        Context context = getApplicationContext();
+        Intent service = new Intent(context, HardwareTriggerBackgroundService.class);
+        context.startService(service);
     }
 
     public void showTwitterSpike(View view) {
@@ -25,10 +33,6 @@ public class HomeActivity extends Activity {
 
     public void showUSSDSpike(View view) {
         displayToast("USSDSpike Will be implemented!");
-    }
-
-    public void showHardwareTriggerSpike(View view) {
-        displayToast("HardwareTriggerSpike Will be implemented!");
     }
 
     private void displayToast(String toastMessage) {
