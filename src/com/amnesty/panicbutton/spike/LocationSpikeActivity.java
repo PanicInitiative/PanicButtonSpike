@@ -48,10 +48,13 @@ public class LocationSpikeActivity extends Activity {
         };
 
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 0, 0, locationListener);
     }
 
     public void updateNetworkLocation(Location location) {
-        TextView networkLocation = (TextView) findViewById(R.id.networkLocation);
+        int id = getResources().getIdentifier(location.getProvider(), "id", getApplicationContext().getPackageName());
+        TextView networkLocation = (TextView) findViewById(id);
         StringBuilder result = new StringBuilder();
         result.append("Provider : ").append(location.getProvider())
                 .append(", Lat : ").append(location.getLatitude())

@@ -9,7 +9,17 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"/>
     <TextView
-            android:id="@+id/networkLocation"
+            android:id="@+id/network"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/gps"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/passive"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"/>
 </LinearLayout>

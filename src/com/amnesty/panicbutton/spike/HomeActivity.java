@@ -32,6 +32,10 @@ public class HomeActivity extends Activity {
         displayToast("USSDSpike Will be implemented!");
     }
 
+    public void showHardwareTriggerSpike(View view) {
+        displayToast("HardwareTrigger Will be implemented!");
+    }
+
     private void displayToast(String toastMessage) {
         Toast toast = Toast.makeText(getApplicationContext(), toastMessage, LENGTH_SHORT);
         toast.show();
