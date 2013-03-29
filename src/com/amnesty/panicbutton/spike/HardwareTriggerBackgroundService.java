@@ -2,11 +2,9 @@ package com.amnesty.panicbutton.spike;
 
 import android.app.Service;
 import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
-import android.os.Vibrator;
 import android.util.Log;
 
 public class HardwareTriggerBackgroundService extends Service {
@@ -22,8 +20,7 @@ public class HardwareTriggerBackgroundService extends Service {
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction("android.media.VOLUME_CHANGED_ACTION");
 
-        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        BroadcastReceiver mReceiver = new HardwareTriggerReceiver(vibrator);
+        BroadcastReceiver mReceiver = new HardwareTriggerReceiver(getApplicationContext());
         registerReceiver(mReceiver, filter);
     }
 

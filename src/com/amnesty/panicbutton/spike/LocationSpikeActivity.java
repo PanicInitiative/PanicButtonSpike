@@ -7,6 +7,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.Date;
 import java.util.List;
 
 public class LocationSpikeActivity extends Activity {
@@ -59,7 +60,7 @@ public class LocationSpikeActivity extends Activity {
         result.append("Provider : ").append(location.getProvider())
                 .append(", Lat : ").append(location.getLatitude())
                 .append(", Long : ").append(location.getLongitude())
-                .append(", Time : ").append(location.getTime());
+                .append(", Time : ").append(new Date(location.getTime()));
 
         networkLocation.setText(result.toString());
     }

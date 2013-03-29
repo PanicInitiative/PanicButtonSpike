@@ -24,13 +24,8 @@
         <activity android:name="LocationSpikeActivity"
                   android:label="@string/location_spike"/>
 
-        <service android:name="com.amnesty.panicbutton.spike.USSDSuppressService"
-                 android:enabled="true"
-                 android:exported="true">
-            <intent-filter>
-                <action android:name="com.android.ussd.IExtendedNetworkService"/>
-            </intent-filter>
-        </service>
+        <activity android:name=".HardwareTriggerActivity"
+                  android:label="@string/hardware_trigger_spike"/>
 
         <service android:name="com.amnesty.panicbutton.spike.HardwareTriggerBackgroundService"
                  android:process=":remote">

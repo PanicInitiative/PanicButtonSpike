@@ -3,7 +3,9 @@ package com.amnesty.panicbutton.spike;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Vibrator;
+import android.telephony.SmsManager;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -13,9 +15,11 @@ public class HardwareTriggerReceiver extends BroadcastReceiver {
     public static final String TAG = HardwareTriggerReceiver.class.getSimpleName();
     private TriggerEvents triggers = new TriggerEvents();
     private Vibrator vibrator;
+    private Context context;
 
-    public HardwareTriggerReceiver(Vibrator vibrator) {
-        this.vibrator = vibrator;
+    public HardwareTriggerReceiver(Context context) {
+        this.context = context;
+        this.vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     @Override
@@ -64,8 +68,14 @@ public class HardwareTriggerReceiver extends BroadcastReceiver {
         }
 
         private void alert() {
-            Log.v(TAG, "TRIGGER ALERT...");
+            SharedPreferences sharedPreferences = context.getSharedPreferences(HardwareTriggerActivity.PREFERENCES_NAME, 0);
+            String destinationAddress = sharedPreferences.getString(HardwareTriggerActivity.MOBILE_NUMBER, null);
+            Log.v(TAG, "TRIGGER ALERT : " + destinationAddress);
             vibrator.vibrate(500);
+
+            SmsManager defaultSMSManager = SmsManager.getDefault();
+            String message = "Help, I am in trouble. Location : " ;
+            defaultSMSManager.sendTextMessage(destinationAddress, null, message, null, null);
         }
     }
 

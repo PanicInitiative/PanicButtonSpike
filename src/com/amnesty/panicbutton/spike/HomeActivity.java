@@ -28,12 +28,12 @@ public class HomeActivity extends Activity {
         startActivity(new Intent(this, LocationSpikeActivity.class));
     }
 
-    public void showUSSDSpike(View view) {
-        displayToast("USSDSpike Will be implemented!");
+    public void showHardwareTriggerSpike(View view) {
+        startActivity(new Intent(this, HardwareTriggerActivity.class));
     }
 
-    public void showHardwareTriggerSpike(View view) {
-        displayToast("HardwareTrigger Will be implemented!");
+    public void showUSSDSpike(View view) {
+        displayToast("USSDSpike Will be implemented!");
     }
 
     private void displayToast(String toastMessage) {
