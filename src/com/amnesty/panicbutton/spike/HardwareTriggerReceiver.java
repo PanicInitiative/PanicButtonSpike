@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Vibrator;
 import android.telephony.SmsManager;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -69,7 +70,8 @@ public class HardwareTriggerReceiver extends BroadcastReceiver {
 
         private void alert() {
             SharedPreferences sharedPreferences = context.getSharedPreferences(HardwareTriggerActivity.PREFERENCES_NAME, 0);
-            String destinationAddress = sharedPreferences.getString(HardwareTriggerActivity.MOBILE_NUMBER, null);
+            String destinationAddress = sharedPreferences.getString(HardwareTriggerActivity.MOBILE_NUMBER, getCurrentPhoneNumber());
+
             Log.v(TAG, "TRIGGER ALERT : " + destinationAddress);
             vibrator.vibrate(500);
 
@@ -77,6 +79,12 @@ public class HardwareTriggerReceiver extends BroadcastReceiver {
             String message = "Help, I am in trouble. Location : " ;
             defaultSMSManager.sendTextMessage(destinationAddress, null, message, null, null);
         }
+
+        private String getCurrentPhoneNumber() {
+            TelephonyManager phoneManager = (TelephonyManager)context.getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
+            return phoneManager.getLine1Number();
+        }
+
     }
 
 }

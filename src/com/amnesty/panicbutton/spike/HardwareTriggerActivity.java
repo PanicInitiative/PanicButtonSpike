@@ -1,8 +1,10 @@
 package com.amnesty.panicbutton.spike;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,7 +29,12 @@ public class HardwareTriggerActivity extends Activity {
         super.onResume();
 
         EditText editText = (EditText) findViewById(R.id.mobileNumber);
-        editText.setText(settings.getString(MOBILE_NUMBER, "NULL"));
+        editText.setText(settings.getString(MOBILE_NUMBER, getCurrentPhoneNumber()));
+    }
+
+    private String getCurrentPhoneNumber() {
+        TelephonyManager phoneManager = (TelephonyManager)getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
+        return phoneManager.getLine1Number();
     }
 
     public void onSaveClick(View view) {
