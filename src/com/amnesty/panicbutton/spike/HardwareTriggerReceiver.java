@@ -72,11 +72,14 @@ public class HardwareTriggerReceiver extends BroadcastReceiver {
             SharedPreferences sharedPreferences = context.getSharedPreferences(HardwareTriggerActivity.PREFERENCES_NAME, 0);
             String destinationAddress = sharedPreferences.getString(HardwareTriggerActivity.MOBILE_NUMBER, getCurrentPhoneNumber());
 
+            String latestLat = sharedPreferences.getString(HomeActivity.LATEST_LATITUDE, "0.0");
+            String latestLong = sharedPreferences.getString(HomeActivity.LATEST_LONGITUDE, "0.0");
+
             Log.v(TAG, "TRIGGER ALERT : " + destinationAddress);
             vibrator.vibrate(500);
 
             SmsManager defaultSMSManager = SmsManager.getDefault();
-            String message = "Help, I am in trouble. Location : " ;
+            String message = "Help, I am in trouble. Location : " + "http://maps.google.com/maps?q=" + latestLat + "," + latestLong;
             defaultSMSManager.sendTextMessage(destinationAddress, null, message, null, null);
         }
 
