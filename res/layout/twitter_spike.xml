@@ -5,11 +5,17 @@
               android:layout_height="fill_parent"
         >
     <EditText
+            android:id="@+id/twitterShortCode"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_twitter_short_code"
+            android:inputType="number"/>
+    <EditText
             android:id="@+id/tweetBox"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="@string/enter_tweet"
-            />
+            android:minLines="3"/>
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
