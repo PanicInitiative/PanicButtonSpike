@@ -11,4 +11,9 @@
     <string name="enter_mobile_number">Enter mobile number</string>
     <string name="saveNumber">Save Number</string>
     <string name="enter_twitter_short_code">Enter Twitter ShortCode</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="multi_button_spike">Multi Button Spike</string>
 </resources>

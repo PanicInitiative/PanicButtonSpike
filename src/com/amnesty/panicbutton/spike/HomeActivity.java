@@ -69,6 +69,10 @@ public class HomeActivity extends Activity {
         startActivity(new Intent(this, HardwareTriggerActivity.class));
     }
 
+    public void showMultiButtonSpike(View view) {
+        startActivity(new Intent(this, MultiButtonActivity.class));
+    }
+
     public void showUSSDSpike(View view) {
         displayToast("USSDSpike Will be implemented!");
     }
