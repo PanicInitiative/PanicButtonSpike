@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +42,10 @@ public class ScreenSlideActivity extends FragmentActivity {
                 nextButton.setEnabled(position != (pageAdapter.getCount() - 1));
             }
         });
+    }
+
+    public void sayHello(View view) {
+        Toast.makeText(this, "Hello world", Toast.LENGTH_SHORT).show();
     }
 
     public void next(View view) {
