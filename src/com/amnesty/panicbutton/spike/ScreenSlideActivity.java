@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScreenSlideActivity extends FragmentActivity {
-    private ViewPager viewPager;
+    private ViewPagerWithoutSwipe viewPager;
     private Button previousButton;
     private Button nextButton;
 
@@ -28,7 +28,7 @@ public class ScreenSlideActivity extends FragmentActivity {
         previousButton = (Button) findViewById(R.id.previous);
         nextButton = (Button) findViewById(R.id.next);
 
-        viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager = (ViewPagerWithoutSwipe) findViewById(R.id.pager);
         final PageAdapter pageAdapter = new PageAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pageAdapter);
         previousButton.setEnabled(false);
