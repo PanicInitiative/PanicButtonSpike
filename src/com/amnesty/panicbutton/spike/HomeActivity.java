@@ -73,7 +73,7 @@ public class HomeActivity extends Activity {
         startActivity(new Intent(this, MultiButtonActivity.class));
     }
 
-    public void showWizardTest(View view) {
+    public void showWizardSpike(View view) {
         startActivity(new Intent(this, ScreenSlideActivity.class));
     }
 

@@ -42,7 +42,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:paddingTop="1dp"
-            android:text="@string/wizard_test"
-            android:onClick="showWizardTest"/>
+            android:text="@string/wizard_spike"
+            android:onClick="showWizardSpike"/>
 </LinearLayout>
 
