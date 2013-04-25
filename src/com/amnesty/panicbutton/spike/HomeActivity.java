@@ -73,8 +73,8 @@ public class HomeActivity extends Activity {
         startActivity(new Intent(this, MultiButtonActivity.class));
     }
 
-    public void showUSSDSpike(View view) {
-        displayToast("USSDSpike Will be implemented!");
+    public void showWizardTest(View view) {
+        startActivity(new Intent(this, ScreenSlideActivity.class));
     }
 
     private void displayToast(String toastMessage) {

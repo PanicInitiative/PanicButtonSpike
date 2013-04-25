@@ -37,5 +37,12 @@
             android:paddingTop="1dp"
             android:text="@string/multi_button_spike"
             android:onClick="showMultiButtonSpike"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="1dp"
+            android:text="@string/wizard_test"
+            android:onClick="showWizardTest"/>
 </LinearLayout>
 

@@ -30,6 +30,9 @@
         <activity android:name=".MultiButtonActivity"
                   android:label="@string/hardware_trigger_spike"/>
 
+        <activity android:name=".ScreenSlideActivity"
+                  android:label="@string/wizard_test"/>
+
         <service android:name="com.amnesty.panicbutton.spike.HardwareTriggerBackgroundService"
                  android:process=":remote">
         </service>

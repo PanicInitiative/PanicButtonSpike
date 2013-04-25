@@ -16,4 +16,7 @@
     <string name="three">3</string>
     <string name="four">4</string>
     <string name="multi_button_spike">Multi Button Spike</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="wizard_test">Wizard Test</string>
 </resources>
