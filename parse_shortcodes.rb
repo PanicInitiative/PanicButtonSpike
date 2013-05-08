@@ -16,9 +16,9 @@ doc.xpath("//tbody/tr").each do |tr|
   if tds.length == 3 
   	country = cleanup(tds[0].content)
   	current_country = country
-  	country_map[country] = [{cleanup(tds[1].content) => cleanup(tds[2].content)}]
+  	country_map[country] = {cleanup(tds[1].content) => cleanup(tds[2].content)}
   else
-  	country_map[current_country].push({cleanup(tds[0].content) => cleanup(tds[1].content)})
+  	country_map[current_country].merge!({cleanup(tds[0].content) => cleanup(tds[1].content)})
   end
 end
 File.open('twitter_short_codes.json', 'w+') {|f| f.write(country_map.to_json) }
