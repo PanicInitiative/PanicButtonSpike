@@ -6,7 +6,7 @@ def cleanup(dirty_string)
 	dirty_string.gsub("\n",'').gsub("\t",'')
 end
 
-doc = Nokogiri::HTML(open('twitter_short_codes.html'))
+doc = Nokogiri::HTML(open('twitter_short_codes.html',:encoding => 'UTF-8'))
 country_map = {}
 current_country = nil
 
